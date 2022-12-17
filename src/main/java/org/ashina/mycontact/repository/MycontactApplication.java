@@ -1,4 +1,4 @@
-package com.example.mycontact;
+package org.ashina.mycontact.repository;
 import com.example.*;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
