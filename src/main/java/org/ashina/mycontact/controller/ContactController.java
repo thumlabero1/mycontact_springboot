@@ -1,14 +1,20 @@
 package org.ashina.mycontact.controller;
 
+import javax.validation.Valid;
+
 import org.apache.axis.utils.StringUtils;
 import org.ashina.mycontact.entity.Contact;
 import org.ashina.mycontact.service.ContactService;
+//import org.junit.platform.commons.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ContactController {
@@ -43,6 +49,17 @@ public class ContactController {
         }
         contactService.save(contact);
         redirect.addFlashAttribute("successMessage", "Saved contact successfully!");
+        return "redirect:/contact";
+    }
+    @GetMapping("/contact/{id}/edit")
+    public String edit(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("contact", contactService.findOne(id));
+        return "form";
+    }
+    @GetMapping("/contact/{id}/delete")
+    public String delete(@PathVariable int id, RedirectAttributes redirect) {
+        contactService.delete(id);
+        redirect.addFlashAttribute("successMessage", "Deleted contact successfully!");
         return "redirect:/contact";
     }
    }

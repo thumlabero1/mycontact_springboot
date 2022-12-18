@@ -1,0 +1,8 @@
+org\ashina\mycontact\config\WebMvcConfiguration.class
+org\ashina\mycontact\repository\ContactRepository.class
+org\ashina\mycontact\service\ContactService.class
+org\ashina\mycontact\repository\repository.class
+org\ashina\mycontact\service\ContactServiceImpl.class
+org\ashina\mycontact\MycontactApplication.class
+org\ashina\mycontact\entity\Contact.class
+org\ashina\mycontact\controller\ContactController.class

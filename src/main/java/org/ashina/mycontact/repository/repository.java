@@ -1,6 +1,5 @@
 package org.ashina.mycontact.repository;
 
-import com.example.*;
 
 import org.ashina.mycontact.entity.Contact;
 import org.springframework.data.repository.CrudRepository;
